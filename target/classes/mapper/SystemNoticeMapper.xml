@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ping.homeschool.dao.SystemNoticeDao">
+    <insert id="addSystemNotice" parameterType="com.ping.homeschool.model.SystemNotice">
+        insert into system_notice
+        (system_notice_title, system_notice_author, system_notice_theme, system_notice_content, system_notice_time)
+        values (#{systemNoticeTitle}, #{systemNoticeAuthor}, #{systemNoticeTheme}, #{systemNoticeContent}, #{systemNoticeTime})
+    </insert>
+
+    <update id="deleteSystemNotice">
+        update system_notice
+        set delete_status = 0
+        where system_notice_id = #{systemNoticeId}
+    </update>
+
+    <select id="selectById" resultType="com.ping.homeschool.model.SystemNotice">
+        select system_notice_id systemNoticeId, system_notice_title systemNoticeTitle, system_notice_author systemNoticeAuthor, system_notice_theme systemNoticeTheme, system_notice_content systemNoticeContent, system_notice_time systemNoticeTime
+        from system_notice
+        where system_notice_id = #{systemNoticeId}
+    </select>
+
+    <select id="countSystemNotice" resultType="int">
+        select count(0)
+        from system_notice
+        where delete_status != 0
+    </select>
+
+    <select id="listSystemNotice" resultType="com.alibaba.fastjson.JSONObject">
+        select system_notice_id systemNoticeId, system_notice_title systemNoticeTitle, system_notice_author systemNoticeAuthor, system_notice_theme systemNoticeTheme, system_notice_content systemNoticeContent, system_notice_time systemNoticeTime
+        from system_notice
+        where delete_status != 0
+        order by system_notice_id DESC
+        limit #{offSet}, #{pageRow}
+    </select>
+
+    <select id="selectAll" resultType="com.alibaba.fastjson.JSONObject">
+        select system_notice_id systemNoticeId, system_notice_title systemNoticeTitle, system_notice_author systemNoticeAuthor, system_notice_theme systemNoticeTheme, system_notice_content systemNoticeContent, system_notice_time systemNoticeTime
+        from system_notice
+        where delete_status != 0
+        order by system_notice_id DESC
+    </select>
+</mapper>

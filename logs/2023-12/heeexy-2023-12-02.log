@@ -1,0 +1,4 @@
+2023-12-02 16:01:45.425 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 10120 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-02 16:01:45.428 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-02 16:01:48.079 INFO  --- [StartupInfoLogger.java:61][restartedMain] - Started MyApplication in 3.01 seconds (JVM running for 4.233)
+2023-12-02 16:04:33.982 WARN  --- [AbstractHandlerExceptionResolver.java:199][http-nio-8080-exec-5] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]

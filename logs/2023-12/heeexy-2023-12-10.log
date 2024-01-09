@@ -1,0 +1,91 @@
+2023-12-10 02:35:32.146 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 8616 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 02:35:32.148 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 02:35:33.919 ERROR --- [LoggingFailureAnalysisReporter.java:40][restartedMain] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-12-10 02:35:42.227 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 10604 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 02:35:42.229 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 02:35:43.817 ERROR --- [LoggingFailureAnalysisReporter.java:40][restartedMain] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-12-10 02:35:52.190 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 16416 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 02:35:52.193 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 02:35:53.932 ERROR --- [LoggingFailureAnalysisReporter.java:40][restartedMain] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-12-10 02:38:17.421 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 3856 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 02:38:17.423 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 02:38:18.935 ERROR --- [LoggingFailureAnalysisReporter.java:40][restartedMain] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-12-10 02:38:38.928 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 7504 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 02:38:38.931 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 02:38:40.481 INFO  --- [StartupInfoLogger.java:61][restartedMain] - Started MyApplication in 1.779 seconds (JVM running for 2.525)
+2023-12-10 06:25:46.541 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-10] - HikariPool-1 - Starting...
+2023-12-10 06:25:46.954 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-10] - HikariPool-1 - Start completed.
+2023-12-10 08:52:33.335 INFO  --- [HikariDataSource.java:350][SpringContextShutdownHook] - HikariPool-1 - Shutdown initiated...
+2023-12-10 08:52:33.351 INFO  --- [HikariDataSource.java:352][SpringContextShutdownHook] - HikariPool-1 - Shutdown completed.
+2023-12-10 08:52:39.476 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 18188 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 08:52:39.478 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 08:52:41.101 INFO  --- [StartupInfoLogger.java:61][restartedMain] - Started MyApplication in 1.896 seconds (JVM running for 2.725)
+2023-12-10 08:53:26.825 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-6] - HikariPool-1 - Starting...
+2023-12-10 08:53:27.223 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-6] - HikariPool-1 - Start completed.
+2023-12-10 08:56:34.542 INFO  --- [HikariDataSource.java:350][SpringContextShutdownHook] - HikariPool-1 - Shutdown initiated...
+2023-12-10 08:56:34.555 INFO  --- [HikariDataSource.java:352][SpringContextShutdownHook] - HikariPool-1 - Shutdown completed.
+2023-12-10 08:56:40.548 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 18072 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 08:56:40.550 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 08:56:42.476 INFO  --- [StartupInfoLogger.java:61][restartedMain] - Started MyApplication in 2.171 seconds (JVM running for 2.961)
+2023-12-10 08:56:50.413 INFO  --- [StartupInfoLogger.java:55][restartedMain] - Starting MyApplication on LAPTOP-V73P5B2A with PID 12944 (C:\Users\DrTang\Desktop\home-school-back\target\classes started by DrTang in C:\Users\DrTang\Desktop\home-school-back)
+2023-12-10 08:56:50.415 INFO  --- [SpringApplication.java:651][restartedMain] - No active profile set, falling back to default profiles: default
+2023-12-10 08:56:51.938 INFO  --- [StartupInfoLogger.java:61][restartedMain] - Started MyApplication in 1.757 seconds (JVM running for 2.475)
+2023-12-10 08:57:07.486 INFO  --- [HikariDataSource.java:110][http-nio-8080-exec-5] - HikariPool-1 - Starting...
+2023-12-10 08:57:07.803 INFO  --- [HikariDataSource.java:123][http-nio-8080-exec-5] - HikariPool-1 - Start completed.
+2023-12-10 13:16:40.467 WARN  --- [HikariPool.java:779][HikariPool-1 housekeeper] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h17m32s538ms412µs400ns).
+2023-12-10 13:38:06.368 WARN  --- [HikariPool.java:779][HikariPool-1 housekeeper] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m55s746ms956µs400ns).
+2023-12-10 22:10:20.433 WARN  --- [HikariPool.java:779][HikariPool-1 housekeeper] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h29m14s32ms439µs500ns).
+2023-12-10 22:52:25.187 WARN  --- [HikariPool.java:779][HikariPool-1 housekeeper] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m34s222ms567µs500ns).
+2023-12-10 23:48:04.814 WARN  --- [HikariPool.java:779][HikariPool-1 housekeeper] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m39s86ms98µs700ns).

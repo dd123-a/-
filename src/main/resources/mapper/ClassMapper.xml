@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ping.homeschool.dao.ClassDao">
+    <insert id="addClass">
+        insert into my_class (class_name, class_adviser, adviser_name, class_info)
+        VALUES (#{className}, #{classAdviser}, #{adviserName}, #{classInfo})
+    </insert>
+
+    <update id="deleteClass">
+        update my_class
+        set class_over = 0
+        where class_id = #{classId}
+    </update>
+
+    <update id="updateClassTop">
+        update my_class
+        set class_top = #{classTop}
+        where class_id = #{classId}
+    </update>
+
+    <select id="selectById" resultType="com.ping.homeschool.model.MyClass">
+        select class_id classId, class_name className, class_adviser classAdviser, adviser_name adviserName, class_info classInfo, class_top classTop
+        from my_class
+        where class_over != 0 and class_id = #{classId}
+    </select>
+
+    <select id="countClass" resultType="int">
+        select count(0)
+        from my_class
+        where class_over != 0
+    </select>
+
+    <select id="listClass" resultType="com.alibaba.fastjson.JSONObject">
+        select m.class_id classId, class_name className, class_adviser classAdviser, adviser_name adviserName, class_info classInfo
+        from my_class m
+        where class_over != 0
+        order by m.class_id
+        limit #{offSet}, #{pageRow}
+    </select>
+
+    <select id="listMyClass" resultType="com.ping.homeschool.model.MyClass">
+        select m.class_id classId, class_name className, class_adviser classAdviser, adviser_name adviserName, class_info classInfo
+        from my_class m, class_user_relation c
+        where c.user_id = #{userId} and c.class_id = m.class_id and class_over != 0
+        order by m.class_id DESC
+    </select>
+
+
+    <delete id="expelMember">
+        delete from class_user_relation where user_id = #{userId} and class_id = #{classId}
+    </delete>
+
+
+    <resultMap id="userMap" type="com.ping.homeschool.util.model.One2Many">
+        <id column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="role_id" property="roleId"/>
+        <result column="role_name" property="roleName"/>
+        <result column="delete_status" property="deleteStatus"/>
+    </resultMap>
+
+    <select id="listMember" resultMap="userMap">
+        select *
+        from class_user_relation c, user u
+        where class_id = #{classId} and c.user_id = u.user_id and u.delete_status != 0
+    </select>
+
+    <select id="isMember" resultType="int">
+        select count(0)
+        from class_user_relation
+        where class_id = #{classId} and user_id = #{userId}
+    </select>
+
+    <insert id="addMember" parameterType="int">
+        insert into class_user_relation(class_id, user_id) VALUES (#{classId}, #{userId})
+    </insert>
+
+    <select id="queryByMany" resultType="int">
+        select class_id
+        from my_class
+        where class_name = #{className} and class_adviser = #{classAdviser} and class_info = #{classInfo}
+    </select>
+
+    <insert id="addJoin">
+        insert into `join`
+        (member_id, class_adviser, class_id)
+         VALUES (#{memberId}, #{classAdviser}, #{classId})
+    </insert>
+
+    <update id="updateJoin">
+        update `join`
+        set join_status = #{joinStatus}
+        where join_id = #{joinId} and join_status = 1
+    </update>
+
+    <select id="listJoin" resultType="com.alibaba.fastjson.JSONObject">
+        select join_id joinId, member_id memberId, username memberName, nickname memberNickname, m.class_id classId, m.class_name className
+        from `join` j, user u, my_class m
+        where member_id = user_id and j.class_adviser = #{classAdviser}
+                and j.class_id = m.class_id and join_status = 1
+    </select>
+
+    <select id="checkJoin" resultType="int">
+        select count(0)
+        from `join`
+        where member_id = #{memberId} and class_id = #{classId} and join_status = 1
+    </select>
+</mapper>

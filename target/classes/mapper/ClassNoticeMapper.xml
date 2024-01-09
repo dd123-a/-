@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ping.homeschool.dao.ClassNoticeDao">
+    <insert id="addClassNotice">
+        insert into class_notice
+        (class_id, class_notice_author, class_notice_title, class_notice_theme, class_notice_content, class_notice_time)
+        VALUES (#{classId}, #{classNoticeAuthor}, #{classNoticeTitle}, #{classNoticeTheme}, #{classNoticeContent}, #{classNoticeTime})
+    </insert>
+
+    <update id="deleteClassNotice">
+        update class_notice
+        set  delete_status = 0
+        where class_notice_id = #{classNoticeId};
+    </update>
+
+    <select id="selectById" resultType="com.alibaba.fastjson.JSONObject">
+        select class_notice_id classNoticeId, c.class_id classId, m.class_name className, m.class_adviser classAdviser, class_notice_author classNoticeAuthor, class_notice_title classNoticeTitle, class_notice_theme classNoticeTheme, class_notice_content classNoticeContent, class_notice_time classNoticeTime
+        from class_notice c, my_class m
+        where class_notice_id = #{classNoticeId} and c.class_id = m.class_id
+    </select>
+
+    <select id="countClassNotice" resultType="int">
+        select count(0)
+        from class_notice
+        where delete_status != 0
+    </select>
+
+    <select id="listClassNotice" resultType="com.alibaba.fastjson.JSONObject">
+        select class_notice_id classNoticeId, c.class_id classId, m.class_name className, class_notice_author classNoticeAuthor, class_notice_title classNoticeTitle, class_notice_theme classNoticeTheme, class_notice_content classNoticeContent, class_notice_time classNoticeTime
+        from class_notice c, my_class m
+        where delete_status != 0 and c.class_id = m.class_id
+        order by class_notice_id DESC
+        limit #{offSet}, #{pageRow}
+    </select>
+
+    <select id="selectAll" resultType="com.alibaba.fastjson.JSONObject">
+        select class_notice_id classNoticeId, c.class_id classId, m.class_name className, class_adviser classAdviser, class_notice_author classNoticeAuthor, class_notice_title classNoticeTitle, class_notice_theme classNoticeTheme, class_notice_content classNoticeContent, class_notice_time classNoticeTime
+        from class_notice c, my_class m
+        where delete_status != 0 and c.class_id = m.class_id and c.class_id = #{classId}
+    </select>
+
+    <select id="queryByMany" resultType="com.alibaba.fastjson.JSONObject">
+        select class_notice_id classNoticeId, c.class_id classId, m.class_name className, class_notice_author classNoticeAuthor, class_notice_title classNoticeTitle, class_notice_theme classNoticeTheme, class_notice_content classNoticeContent, class_notice_time classNoticeTime
+        from class_notice c, my_class m
+        <where> delete_status != 0 and c.class_id = m.class_id
+            <if test="classId != ''">
+                and c.class_id = #{classId}
+            </if>
+            <if test="classNoticeTitle != ''">
+                and class_notice_title like concat('%', #{classNoticeTitle}, '%')
+            </if>
+            <if test="classNoticeTheme != ''">
+                and class_notice_theme = #{classNoticeTheme}
+            </if>
+            <if test="classNoticeAuthor != ''">
+                and class_notice_author = #{classNoticeAuthor}
+            </if>
+            <if test="classNoticeContent != ''">
+                and class_notice_content like concat('%', #{classNoticeContent}, '%')
+            </if>
+            <if test="start != null">
+                and class_notice_time between #{start} and #{end}
+            </if>
+        </where>
+    </select>
+</mapper>
